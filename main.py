@@ -31,7 +31,7 @@ def no_of_doctors_available(Loc,speciality):
         url = requests.get(url,headers=headers).text
 
         beautify = BeautifulSoup(url,'html.parser')
-        ans = beautify.findAll('div',{"class":"c-listing-wrapper"})[0].div.div.div.div.h1
+        ans = beautify.findAll('h1',{"class":"u-xx-large-font u-bold"})[0]
         if ans:
             
             doctors_available = ans.text
